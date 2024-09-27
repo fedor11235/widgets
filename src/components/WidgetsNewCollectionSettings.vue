@@ -85,6 +85,32 @@
       <q-icon name="settings" />
     </q-item-section>
     <q-item-section>
+      <q-input
+        outlined
+        v-model="widgetsNewCollectionStore.buttonText"
+        label="Текст кнопки"
+      ></q-input>
+    </q-item-section>
+  </q-item>
+
+  <q-item clickable>
+    <q-item-section avatar>
+      <q-icon name="settings" />
+    </q-item-section>
+    <q-item-section>
+      <q-input
+        outlined
+        v-model="widgetsNewCollectionStore.buttonLink"
+        label="Ссылка кнопки"
+      ></q-input>
+    </q-item-section>
+  </q-item>
+
+  <q-item clickable>
+    <q-item-section avatar>
+      <q-icon name="settings" />
+    </q-item-section>
+    <q-item-section>
       <q-btn
         style="background: goldenrod; color: white"
         label="Загрузить своё изображение"

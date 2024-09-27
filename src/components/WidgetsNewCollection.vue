@@ -43,8 +43,8 @@
           }"
           class="button-order"
           target="_blank"
-          href="https://www.google.com/"
-          >Показать</a
+          :href="widgetsNewCollectionStore.buttonLink"
+          >{{ widgetsNewCollectionStore.buttonText }}</a
         >
       </div>
       <img

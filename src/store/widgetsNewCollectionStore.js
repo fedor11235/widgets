@@ -6,6 +6,8 @@ export const useWidgetsNewCollectionStore = defineStore(
     state: () => ({
       backdropColor: "#7ba0c4",
       buttonColor: "rgb(203, 171, 73)",
+      buttonLink: "https://www.google.com/",
+      buttonText: "Показать",
       title: "10% процентов скидки",
       subtitle: "Новая коллекция",
       description: "Получи скидку прямо сейчас",
