@@ -23,6 +23,7 @@
         <q-item
           v-for="model of models"
           :key="model.id"
+          v-show="!modelSelect"
           clickable
           v-ripple
           :active="modelSelect === model"
@@ -43,6 +44,9 @@
             <q-item-label caption>{{ model.caption }}</q-item-label>
           </q-item-section>
         </q-item>
+
+        <component :is="modelSelect.widgetSettings" />
+
         <q-item
           v-if="modelSelect"
           clickable
@@ -61,7 +65,7 @@
     </q-drawer>
 
     <q-page-container>
-      <component :is="modelSelect.component" />
+      <component :is="modelSelect.widgetView" />
     </q-page-container>
   </q-layout>
 </template>
@@ -70,6 +74,7 @@
 import { ref } from "vue";
 
 import WidgetsNewCollection from "./components/WidgetsNewCollection.vue";
+import WidgetsNewCollectionSettings from "./components/WidgetsNewCollectionSettings.vue";
 
 const models = [
   {
@@ -77,7 +82,8 @@ const models = [
     select: "newCollection",
     title: "Новая коллекция",
     caption: "шаблон",
-    component: WidgetsNewCollection,
+    widgetView: WidgetsNewCollection,
+    widgetSettings: WidgetsNewCollectionSettings,
   },
 ];
 

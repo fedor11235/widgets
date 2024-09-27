@@ -1,8 +1,20 @@
 <template>
   <q-page class="flex flex-center">
-    <div class="backdrop popup-close" id="backdrop"></div>
+    <div
+      class="backdrop popup-close"
+      id="backdrop"
+      :style="{
+        backgroundColor: widgetsNewCollectionStore.backdropColor,
+      }"
+    ></div>
 
-    <div class="widgets" id="widget">
+    <div
+      :style="{
+        animation: `0.3s ${widgetsNewCollectionStore.fade?.value} ease`,
+      }"
+      class="widgets"
+      id="widget"
+    >
       <div class="widgets_cansel popup-close">
         <div class="widgets_cansel_warpper-svg">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -16,22 +28,42 @@
 
       <div class="widgets_part widgets_part_left">
         <div class="widgets_warpper_text">
-          <div class="widgets_subtitle">Новая коллекция</div>
-          <div class="widgets_title">10% процентов скидки</div>
-          <div class="widgets_description">Получи скидку прямо сейчас</div>
+          <div class="widgets_subtitle">
+            {{ widgetsNewCollectionStore.subtitle }}
+          </div>
+          <div class="widgets_title">{{ widgetsNewCollectionStore.title }}</div>
+          <div class="widgets_description">
+            {{ widgetsNewCollectionStore.description }}
+          </div>
         </div>
 
-        <a class="button-order" target="_blank" href="https://www.google.com/"
+        <a
+          :style="{
+            backgroundColor: widgetsNewCollectionStore.buttonColor,
+          }"
+          class="button-order"
+          target="_blank"
+          href="https://www.google.com/"
           >Показать</a
         >
       </div>
-      <img class="widgets_part" src="sample.jpeg" />
+      <img
+        class="widgets_part"
+        :src="
+          widgetsNewCollectionStore.img
+            ? widgetsNewCollectionStore.img
+            : 'sample.jpeg'
+        "
+      />
     </div>
   </q-page>
 </template>
 
 <script setup>
 import { onMounted } from "vue";
+import { useWidgetsNewCollectionStore } from "@/store/widgetsNewCollectionStore";
+
+const widgetsNewCollectionStore = useWidgetsNewCollectionStore();
 
 onMounted(() => {
   const backdrop = document.getElementById("backdrop");
@@ -57,14 +89,13 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
+<style>
 .backdrop {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #7ba0c4;
 }
 
 .widgets {
@@ -76,7 +107,6 @@ onMounted(() => {
   width: 560px;
   max-height: 560px;
   background-color: white;
-  animation: 0.3s fadeIn ease;
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* pointer-events: none; */
@@ -146,10 +176,43 @@ onMounted(() => {
   text-align: center;
 }
 
-@keyframes fadeIn {
+@keyframes fadeTop {
   from {
     opacity: 0;
     transform: translate(-50%, -30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -80%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translate(-30%, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translate(-80%, -50%);
   }
   to {
     opacity: 1;
