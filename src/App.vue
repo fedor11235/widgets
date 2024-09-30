@@ -46,7 +46,7 @@
           </q-item-section>
         </q-item>
 
-        <component :is="mainStore.panelMode?.widgetSettings" />
+        <component :is="mainStore.settingsMenu?.widgetSettings" />
 
         <q-item
           v-if="mainStore.panelMode !== 'default'"
@@ -66,7 +66,7 @@
     </q-drawer>
 
     <q-page-container>
-      <component :is="mainStore.settings?.widgetView" />
+      <component :is="mainStore.settingsMenu?.widgetView" />
     </q-page-container>
   </q-layout>
 </template>

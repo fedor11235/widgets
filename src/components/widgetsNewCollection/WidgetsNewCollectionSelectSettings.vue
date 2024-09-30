@@ -3,7 +3,7 @@
     clickable
     v-ripple
     active-class="my-menu-link"
-    @click="hsndlerSelectSetting"
+    @click="mainStore.settingsMode = 'newCollectionBackdropSettings'"
   >
     <q-item-section avatar>
       <q-icon name="settings" />
@@ -17,7 +17,7 @@
     clickable
     v-ripple
     active-class="my-menu-link"
-    @click="hsndlerSelectSetting"
+    @click="mainStore.settingsMode = 'newCollectionWidgetSettings'"
   >
     <q-item-section avatar>
       <q-icon name="settings" />
@@ -31,7 +31,7 @@
     clickable
     v-ripple
     active-class="my-menu-link"
-    @click="hsndlerSelectSetting"
+    @click="mainStore.settingsMode = 'newCollectionTitleSettings'"
   >
     <q-item-section avatar>
       <q-icon name="settings" />
@@ -45,7 +45,7 @@
     clickable
     v-ripple
     active-class="my-menu-link"
-    @click="hsndlerSelectSetting"
+    @click="mainStore.settingsMode = 'newCollectionSubtitleSettings'"
   >
     <q-item-section avatar>
       <q-icon name="settings" />
@@ -59,7 +59,7 @@
     clickable
     v-ripple
     active-class="my-menu-link"
-    @click="hsndlerSelectSetting"
+    @click="mainStore.settingsMode = 'newCollectionDescriptionSettings'"
   >
     <q-item-section avatar>
       <q-icon name="settings" />
@@ -73,7 +73,7 @@
     clickable
     v-ripple
     active-class="my-menu-link"
-    @click="hsndlerSelectSetting"
+    @click="mainStore.settingsMode = 'newCollectionImgSettings'"
   >
     <q-item-section avatar>
       <q-icon name="settings" />
@@ -87,7 +87,7 @@
     clickable
     v-ripple
     active-class="my-menu-link"
-    @click="hsndlerSelectSetting"
+    @click="mainStore.settingsMode = 'newCollectionButtonSettings'"
   >
     <q-item-section avatar>
       <q-icon name="settings" />
@@ -99,6 +99,7 @@
 </template>
 
 <script setup>
+import { uaeMainStore } from "@/store/mainStore";
 // import { useWidgetsNewCollectionStore } from "@/store/widgetsNewCollectionStore";
 
 // const emersionOptions = [
@@ -109,8 +110,5 @@
 // ];
 
 // const widgetsNewCollectionStore = useWidgetsNewCollectionStore();
-
-function hsndlerSelectSetting() {
-  console.log("!!!!!!!!");
-}
+const mainStore = uaeMainStore();
 </script>
