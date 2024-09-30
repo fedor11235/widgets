@@ -31,12 +31,11 @@
         <q-item
           v-for="model of models"
           :key="model.id"
-          v-show="!modelSelect"
+          v-show="mainStore.panelMode === 'default'"
           clickable
           v-ripple
-          :active="modelSelect === model"
           active-class="my-menu-link"
-          @click="modelSelect = model"
+          @click="mainStore.panelMode = 'collectionSelectSettings'"
         >
           <q-item-section avatar>
             <q-icon name="arrow_forward" />
@@ -47,14 +46,14 @@
           </q-item-section>
         </q-item>
 
-        <component :is="modelSelect.widgetSettings" />
+        <component :is="mainStore.panelMode?.widgetSettings" />
 
         <q-item
-          v-if="modelSelect"
+          v-if="mainStore.panelMode !== 'default'"
           clickable
           v-ripple
           active-class="my-menu-link"
-          @click="modelSelect = ''"
+          @click="mainStore.panelMode = 'default'"
         >
           <q-item-section avatar>
             <q-icon name="undo" />
@@ -67,13 +66,15 @@
     </q-drawer>
 
     <q-page-container>
-      <component :is="modelSelect.widgetView" />
+      <component :is="mainStore.settings?.widgetView" />
     </q-page-container>
   </q-layout>
 </template>
 
 <script setup>
 import { ref } from "vue";
+
+import { uaeMainStore } from "@/store/mainStore";
 
 import WidgetsNewCollection from "./components/widgetsNewCollection/WidgetsNewCollection.vue";
 // import WidgetsNewCollectionSettings from "./components/WidgetsNewCollectionSettings.vue";
@@ -90,8 +91,13 @@ const models = [
   },
 ];
 
+const mainStore = uaeMainStore();
+
 const leftDrawerOpen = ref(false);
-const modelSelect = ref("");
+
+// function handlerSelectModel(settingName) {
+//   mainStore.panelMode = settingName
+// }
 </script>
 
 <style>
