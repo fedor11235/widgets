@@ -20,8 +20,8 @@
   <q-item clickable>
     <q-item-section>
       <q-badge>
-        Настройка прозрачности фона:
-        {{ widgetsNewCollectionStore.backdropOpacity }}px
+        Прозрачность:
+        {{ widgetsNewCollectionStore.backdropOpacity }}
       </q-badge>
 
       <q-slider

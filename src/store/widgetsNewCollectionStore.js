@@ -35,6 +35,9 @@ export const useWidgetsNewCollectionStore = defineStore(
       buttonText: "Показать",
       buttonTextColor: "black",
       buttonBorderRaius: 0,
+
+      // Настройка лэйаутовй
+      position: {label: "Модалка", value: 'modal'},
     }),
   },
 );

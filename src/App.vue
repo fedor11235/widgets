@@ -20,6 +20,7 @@
     <q-drawer
       v-model="leftDrawerOpen"
       elevated
+      width="250"
       behavior="desktop"
       no-swipe-backdrop
       class="bg-grey-2"
@@ -82,7 +83,7 @@ import { uaeMainStore } from "@/store/mainStore";
 
 import WidgetsNewCollection from "./components/widgetsNewCollection/WidgetsNewCollection.vue";
 // import WidgetsNewCollectionSettings from "./components/WidgetsNewCollectionSettings.vue";
-import WidgetsNewCollectionSelectSettings from "./components/widgetsNewCollection/WidgetsNewCollectionSelectSettings.vue";
+import WidgetsNewCollectionSelectSettings from "./components/widgetsNewCollection/WidgetsNewCollectionSettings.vue";
 
 const models = [
   {

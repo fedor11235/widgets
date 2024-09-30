@@ -1,6 +1,6 @@
 import WidgetsNewCollection from "@/components/widgetsNewCollection/WidgetsNewCollection.vue";
 // import WidgetsNewCollectionSettings from "./components/WidgetsNewCollectionSettings.vue";
-import WidgetsNewCollectionSelectSettings from "@/components/widgetsNewCollection/WidgetsNewCollectionSelectSettings.vue";
+import WidgetsNewCollectionSelectSettings from "@/components/widgetsNewCollection/WidgetsNewCollectionSettings.vue";
 
 import NewCollectionBackdropSettings from "@/components/widgetsNewCollection/settings/NewCollectionBackdropSettings.vue";
 import NewCollectionWidgetSettings from "@/components/widgetsNewCollection/settings/NewCollectionWidgetSettings.vue";
@@ -9,6 +9,7 @@ import NewCollectionSubtitleSettings from "@/components/widgetsNewCollection/set
 import NewCollectionDescriptionSettings from "@/components/widgetsNewCollection/settings/NewCollectionDescriptionSettings.vue";
 import NewCollectionImgSettings from "@/components/widgetsNewCollection/settings/NewCollectionImgSettings.vue";
 import NewCollectionButtonSettings from "@/components/widgetsNewCollection/settings/NewCollectionButtonSettings.vue";
+import NewCollectionWidgetLayout from "@/components/widgetsNewCollection/settings/NewCollectionWidgetLayout.vue";
 
 import { defineStore } from "pinia";
 
@@ -46,6 +47,8 @@ export const uaeMainStore = defineStore("main", {
         return NewCollectionImgSettings;
       } else if (state.settingsMode === "newCollectionButtonSettings") {
         return NewCollectionButtonSettings;
+      } else if (state.settingsMode === "newCollectionWidgetLayout") {
+        return NewCollectionWidgetLayout;
       }
     },
   },

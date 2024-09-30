@@ -1,285 +1,128 @@
 <template>
-  <q-item clickable>
+  <q-item
+    clickable
+    v-ripple
+    active-class="my-menu-link"
+    @click="mainStore.settingsMode = 'newCollectionBackdropSettings'"
+  >
+    <q-item-section avatar>
+      <q-icon name="settings" />
+    </q-item-section>
     <q-item-section>
-      <q-item-label>Найстройка цвета задника</q-item-label>
-
-      <br />
-
-      <q-color
-        name="accent_color"
-        v-model="widgetsNewCollectionStore.backdropColor"
-        no-header
-        no-footer
-        style="width: 100%"
-      ></q-color>
-
-      <br />
+      <q-item-label>Настройка задника</q-item-label>
     </q-item-section>
   </q-item>
 
-  <q-item clickable>
+  <q-item
+    clickable
+    v-ripple
+    active-class="my-menu-link"
+    @click="mainStore.settingsMode = 'newCollectionWidgetSettings'"
+  >
+    <q-item-section avatar>
+      <q-icon name="settings" />
+    </q-item-section>
     <q-item-section>
-      <q-item-label>Найстройка цвета кнопки</q-item-label>
-
-      <br />
-
-      <q-color
-        name="accent_color"
-        v-model="widgetsNewCollectionStore.buttonColor"
-        no-header
-        no-footer
-        style="width: 100%"
-      ></q-color>
-
-      <br />
+      <q-item-label>Настройка виджета</q-item-label>
     </q-item-section>
   </q-item>
 
-  <q-item clickable>
+  <q-item
+    clickable
+    v-ripple
+    active-class="my-menu-link"
+    @click="mainStore.settingsMode = 'newCollectionTitleSettings'"
+  >
+    <q-item-section avatar>
+      <q-icon name="settings" />
+    </q-item-section>
     <q-item-section>
-      <q-input
-        outlined
-        v-model="widgetsNewCollectionStore.title"
-        label="Текст заголовка"
-      ></q-input>
+      <q-item-label>Настройка заголовка</q-item-label>
     </q-item-section>
   </q-item>
 
-  <q-item clickable>
+  <q-item
+    clickable
+    v-ripple
+    active-class="my-menu-link"
+    @click="mainStore.settingsMode = 'newCollectionSubtitleSettings'"
+  >
+    <q-item-section avatar>
+      <q-icon name="settings" />
+    </q-item-section>
     <q-item-section>
-      <q-input
-        outlined
-        v-model="widgetsNewCollectionStore.subtitle"
-        label="Текст подзаголовка"
-      ></q-input>
+      <q-item-label>Настройка подзаголовка</q-item-label>
     </q-item-section>
   </q-item>
 
-  <q-item clickable>
+  <q-item
+    clickable
+    v-ripple
+    active-class="my-menu-link"
+    @click="mainStore.settingsMode = 'newCollectionDescriptionSettings'"
+  >
+    <q-item-section avatar>
+      <q-icon name="settings" />
+    </q-item-section>
     <q-item-section>
-      <q-input
-        outlined
-        v-model="widgetsNewCollectionStore.description"
-        label="Текст описания"
-      ></q-input>
+      <q-item-label>Настройка описания</q-item-label>
     </q-item-section>
   </q-item>
 
-  <q-item clickable>
+  <q-item
+    clickable
+    v-ripple
+    active-class="my-menu-link"
+    @click="mainStore.settingsMode = 'newCollectionImgSettings'"
+  >
+    <q-item-section avatar>
+      <q-icon name="settings" />
+    </q-item-section>
     <q-item-section>
-      <q-input
-        outlined
-        :width="200"
-        v-model="widgetsNewCollectionStore.buttonText"
-        label="Текст кнопки"
-      ></q-input>
+      <q-item-label>Настройка картинки</q-item-label>
     </q-item-section>
   </q-item>
 
-  <q-item clickable>
+  <q-item
+    clickable
+    v-ripple
+    active-class="my-menu-link"
+    @click="mainStore.settingsMode = 'newCollectionButtonSettings'"
+  >
+    <q-item-section avatar>
+      <q-icon name="settings" />
+    </q-item-section>
     <q-item-section>
-      <q-input
-        outlined
-        v-model="widgetsNewCollectionStore.buttonLink"
-        label="Ссылка кнопки"
-      ></q-input>
+      <q-item-label>Настройка кнопки</q-item-label>
     </q-item-section>
   </q-item>
 
-  <q-item clickable>
-    <q-item-section>
-      <q-btn
-        style="background: goldenrod; color: white"
-        label="Загрузить своё изображение"
-        @click="handlerUploadImg"
-      ></q-btn>
+  <q-item
+    clickable
+    v-ripple
+    active-class="my-menu-link"
+    @click="mainStore.settingsMode = 'newCollectionWidgetLayout'"
+  >
+    <q-item-section avatar>
+      <q-icon name="settings" />
     </q-item-section>
-  </q-item>
-
-  <q-item clickable>
     <q-item-section>
-      <q-select
-        outlined
-        v-model="widgetsNewCollectionStore.fade"
-        :options="emersionOptions"
-        label="Появление"
-      ></q-select>
-    </q-item-section>
-  </q-item>
-
-  <q-item clickable>
-    <q-item-section>
-      <q-badge>
-        Закругление виджета:
-        {{ widgetsNewCollectionStore.wiwgetBorderRadius }}px
-      </q-badge>
-
-      <q-slider
-        v-model="widgetsNewCollectionStore.wiwgetBorderRadius"
-        :min="0"
-        :max="20"
-      ></q-slider>
-    </q-item-section>
-  </q-item>
-
-  <q-item clickable>
-    <q-item-section>
-      <q-item-label>Найстройка цвета текста кнопки</q-item-label>
-
-      <br />
-
-      <q-color
-        name="accent_color"
-        v-model="widgetsNewCollectionStore.buttonTextColor"
-        no-header
-        no-footer
-        style="width: 100%"
-      ></q-color>
-
-      <br />
-    </q-item-section>
-  </q-item>
-
-  <q-item clickable>
-    <q-item-section>
-      <q-badge>
-        Закругление кнопки: {{ widgetsNewCollectionStore.wiwgetBorderRadius }}px
-      </q-badge>
-
-      <q-slider
-        v-model="widgetsNewCollectionStore.buttonBorderRaius"
-        :min="0"
-        :max="20"
-      ></q-slider>
-    </q-item-section>
-  </q-item>
-
-  <q-item clickable>
-    <q-item-section>
-      <q-item-label>Найстройка цвета заголовка</q-item-label>
-
-      <br />
-
-      <q-color
-        name="accent_color"
-        v-model="widgetsNewCollectionStore.titleColor"
-        no-header
-        no-footer
-        style="width: 100%"
-      ></q-color>
-
-      <br />
-    </q-item-section>
-  </q-item>
-
-  <q-item clickable>
-    <q-item-section>
-      <q-item-label>Найстройка цвета подзаголовка</q-item-label>
-
-      <br />
-
-      <q-color
-        name="accent_color"
-        v-model="widgetsNewCollectionStore.subtitleColor"
-        no-header
-        no-footer
-        style="width: 100%"
-      ></q-color>
-
-      <br />
-    </q-item-section>
-  </q-item>
-
-  <q-item clickable>
-    <q-item-section>
-      <q-item-label>Найстройка цвета описания</q-item-label>
-
-      <br />
-
-      <q-color
-        name="accent_color"
-        v-model="widgetsNewCollectionStore.descriptionColor"
-        no-header
-        no-footer
-        style="width: 100%"
-      ></q-color>
-
-      <br />
-    </q-item-section>
-  </q-item>
-
-  <q-item clickable>
-    <q-item-section>
-      <q-badge>
-        Настройка прозрачности фона:
-        {{ widgetsNewCollectionStore.backdropOpacity }}px
-      </q-badge>
-
-      <q-slider
-        v-model="widgetsNewCollectionStore.backdropOpacity"
-        :min="0"
-        :max="1"
-        :step="0.1"
-      ></q-slider>
-    </q-item-section>
-  </q-item>
-
-  <q-item clickable>
-    <q-item-section>
-      <q-item-label>Найстройка цвета виджета</q-item-label>
-
-      <br />
-
-      <q-color
-        name="accent_color"
-        v-model="widgetsNewCollectionStore.widgetColor"
-        no-header
-        no-footer
-        style="width: 100%"
-      ></q-color>
-
-      <br />
-    </q-item-section>
-  </q-item>
-
-  <q-item clickable>
-    <q-item-section>
-      <q-badge>
-        Закругление кнопки: {{ widgetsNewCollectionStore.imgBorderRaius }}px
-      </q-badge>
-
-      <q-slider
-        v-model="widgetsNewCollectionStore.imgBorderRaius"
-        :min="0"
-        :max="20"
-      ></q-slider>
+      <q-item-label>Настройка располжения</q-item-label>
     </q-item-section>
   </q-item>
 </template>
 
 <script setup>
-import { useWidgetsNewCollectionStore } from "@/store/widgetsNewCollectionStore";
+import { uaeMainStore } from "@/store/mainStore";
+// import { useWidgetsNewCollectionStore } from "@/store/widgetsNewCollectionStore";
 
-const emersionOptions = [
-  { label: "Пермещение снизу", value: "fadeDown" },
-  { label: "Пермещение сверху", value: "fadeTop" },
-  { label: "Пермещение слева", value: "fadeLeft" },
-  { label: "Пермещение справа", value: "fadeRight" },
-];
+// const emersionOptions = [
+//   { label: "Пермещение снизу", value: "fadeDown" },
+//   { label: "Пермещение сверху", value: "fadeTop" },
+//   { label: "Пермещение слева", value: "fadeLeft" },
+//   { label: "Пермещение справа", value: "fadeRight" },
+// ];
 
-const widgetsNewCollectionStore = useWidgetsNewCollectionStore();
-
-function handlerUploadImg() {
-  const fileInput = document.createElement("input");
-  fileInput.type = "file";
-  fileInput.click();
-  fileInput.addEventListener("change", async (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = async function (event) {
-      widgetsNewCollectionStore.img = event?.target?.result;
-    };
-    reader.readAsDataURL(file);
-  });
-}
+// const widgetsNewCollectionStore = useWidgetsNewCollectionStore();
+const mainStore = uaeMainStore();
 </script>
