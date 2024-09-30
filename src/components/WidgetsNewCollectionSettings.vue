@@ -1,8 +1,6 @@
 <template>
   <q-item clickable>
-    <q-item-section avatar>
-      <q-icon name="settings" />
-    </q-item-section>
+
     <q-item-section>
       <q-item-label>Найстройка цвета задника</q-item-label>
 
@@ -13,7 +11,7 @@
         v-model="widgetsNewCollectionStore.backdropColor"
         no-header
         no-footer
-        style="width: 200px; max-width: 100%"
+        style="width: 100%"
       ></q-color>
 
       <br />
@@ -21,9 +19,7 @@
   </q-item>
 
   <q-item clickable>
-    <q-item-section avatar>
-      <q-icon name="settings" />
-    </q-item-section>
+
     <q-item-section>
       <q-item-label>Найстройка цвета кнопки</q-item-label>
 
@@ -34,7 +30,7 @@
         v-model="widgetsNewCollectionStore.buttonColor"
         no-header
         no-footer
-        style="width: 200px; max-width: 100%"
+        style="width: 100%"
       ></q-color>
 
       <br />
@@ -42,9 +38,7 @@
   </q-item>
 
   <q-item clickable>
-    <q-item-section avatar>
-      <q-icon name="settings" />
-    </q-item-section>
+
     <q-item-section>
       <q-input
         outlined
@@ -55,9 +49,7 @@
   </q-item>
 
   <q-item clickable>
-    <q-item-section avatar>
-      <q-icon name="settings" />
-    </q-item-section>
+
     <q-item-section>
       <q-input
         outlined
@@ -68,9 +60,7 @@
   </q-item>
 
   <q-item clickable>
-    <q-item-section avatar>
-      <q-icon name="settings" />
-    </q-item-section>
+
     <q-item-section>
       <q-input
         outlined
@@ -81,12 +71,11 @@
   </q-item>
 
   <q-item clickable>
-    <q-item-section avatar>
-      <q-icon name="settings" />
-    </q-item-section>
+
     <q-item-section>
       <q-input
         outlined
+        :width="200"
         v-model="widgetsNewCollectionStore.buttonText"
         label="Текст кнопки"
       ></q-input>
@@ -94,9 +83,7 @@
   </q-item>
 
   <q-item clickable>
-    <q-item-section avatar>
-      <q-icon name="settings" />
-    </q-item-section>
+
     <q-item-section>
       <q-input
         outlined
@@ -107,9 +94,7 @@
   </q-item>
 
   <q-item clickable>
-    <q-item-section avatar>
-      <q-icon name="settings" />
-    </q-item-section>
+
     <q-item-section>
       <q-btn
         style="background: goldenrod; color: white"
@@ -120,9 +105,7 @@
   </q-item>
 
   <q-item clickable>
-    <q-item-section avatar>
-      <q-icon name="settings" />
-    </q-item-section>
+
     <q-item-section>
       <q-select
         outlined
@@ -130,6 +113,163 @@
         :options="emersionOptions"
         label="Появление"
       ></q-select>
+    </q-item-section>
+  </q-item>
+
+  <q-item clickable>
+
+    <q-item-section>
+      <q-badge>
+        Закругление виджета:
+        {{ widgetsNewCollectionStore.wiwgetBorderRadius }}px
+      </q-badge>
+
+      <q-slider
+        v-model="widgetsNewCollectionStore.wiwgetBorderRadius"
+        :min="0"
+        :max="20"
+      ></q-slider>
+    </q-item-section>
+  </q-item>
+
+  <q-item clickable>
+
+    <q-item-section>
+      <q-item-label>Найстройка цвета текста кнопки</q-item-label>
+
+      <br />
+
+      <q-color
+        name="accent_color"
+        v-model="widgetsNewCollectionStore.buttonTextColor"
+        no-header
+        no-footer
+        style="width: 100%"
+      ></q-color>
+
+      <br />
+    </q-item-section>
+  </q-item>
+
+  <q-item clickable>
+
+    <q-item-section>
+      <q-badge>
+        Закругление кнопки: {{ widgetsNewCollectionStore.wiwgetBorderRadius }}px
+      </q-badge>
+
+      <q-slider
+        v-model="widgetsNewCollectionStore.buttonBorderRaius"
+        :min="0"
+        :max="20"
+      ></q-slider>
+    </q-item-section>
+  </q-item>
+
+  <q-item clickable>
+
+    <q-item-section>
+      <q-item-label>Найстройка цвета заголовка</q-item-label>
+
+      <br />
+
+      <q-color
+        name="accent_color"
+        v-model="widgetsNewCollectionStore.titleColor"
+        no-header
+        no-footer
+        style="width: 100%"
+      ></q-color>
+
+      <br />
+    </q-item-section>
+  </q-item>
+
+  <q-item clickable>
+
+    <q-item-section>
+      <q-item-label>Найстройка цвета подзаголовка</q-item-label>
+
+      <br />
+
+      <q-color
+        name="accent_color"
+        v-model="widgetsNewCollectionStore.subtitleColor"
+        no-header
+        no-footer
+        style="width: 100%"
+      ></q-color>
+
+      <br />
+    </q-item-section>
+  </q-item>
+
+  <q-item clickable>
+
+    <q-item-section>
+      <q-item-label>Найстройка цвета описания</q-item-label>
+
+      <br />
+
+      <q-color
+        name="accent_color"
+        v-model="widgetsNewCollectionStore.descriptionColor"
+        no-header
+        no-footer
+        style="width: 100%"
+      ></q-color>
+
+      <br />
+    </q-item-section>
+  </q-item>
+
+  <q-item clickable>
+
+    <q-item-section>
+      <q-badge>
+        Настройка прозрачности фона:
+        {{ widgetsNewCollectionStore.backdropOpacity }}px
+      </q-badge>
+
+      <q-slider
+        v-model="widgetsNewCollectionStore.backdropOpacity"
+        :min="0"
+        :max="1"
+        :step="0.1"
+      ></q-slider>
+    </q-item-section>
+  </q-item>
+
+  <q-item clickable>
+    <q-item-section>
+      <q-item-label>Найстройка цвета виджета</q-item-label>
+
+      <br />
+
+      <q-color
+        name="accent_color"
+        v-model="widgetsNewCollectionStore.widgetColor"
+        no-header
+        no-footer
+        style="width: 100%"
+      ></q-color>
+
+      <br />
+    </q-item-section>
+  </q-item>
+
+  <q-item clickable>
+
+    <q-item-section>
+      <q-badge>
+        Закругление кнопки: {{ widgetsNewCollectionStore.imgBorderRaius }}px
+      </q-badge>
+
+      <q-slider
+        v-model="widgetsNewCollectionStore.imgBorderRaius"
+        :min="0"
+        :max="20"
+      ></q-slider>
     </q-item-section>
   </q-item>
 </template>

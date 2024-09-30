@@ -17,7 +17,15 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered class="bg-grey-2">
+    <q-drawer
+      v-model="leftDrawerOpen"
+      elevated
+      behavior="desktop"
+      no-swipe-backdrop
+      class="bg-grey-2"
+    >
+      <!-- :overlay="false" -->
+      <!-- mini -->
       <q-list>
         <q-item-label header>Настройка виджета</q-item-label>
         <q-item

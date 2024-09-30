@@ -5,12 +5,14 @@
       id="backdrop"
       :style="{
         backgroundColor: widgetsNewCollectionStore.backdropColor,
+        opacity: widgetsNewCollectionStore.backdropOpacity,
       }"
     ></div>
-
     <div
       :style="{
         animation: `0.3s ${widgetsNewCollectionStore.fade?.value} ease`,
+        backgroundColor: widgetsNewCollectionStore.widgetColor,
+        borderRadius: `${widgetsNewCollectionStore.wiwgetBorderRadius}px`,
       }"
       class="widgets"
       id="widget"
@@ -28,11 +30,28 @@
 
       <div class="widgets_part widgets_part_left">
         <div class="widgets_warpper_text">
-          <div class="widgets_subtitle">
+          <div
+            class="widgets_subtitle"
+            :style="{
+              color: widgetsNewCollectionStore.subtitleColor,
+            }"
+          >
             {{ widgetsNewCollectionStore.subtitle }}
           </div>
-          <div class="widgets_title">{{ widgetsNewCollectionStore.title }}</div>
-          <div class="widgets_description">
+          <div
+            class="widgets_title"
+            :style="{
+              color: widgetsNewCollectionStore.titleColor,
+            }"
+          >
+            {{ widgetsNewCollectionStore.title }}
+          </div>
+          <div
+            class="widgets_description"
+            :style="{
+              color: widgetsNewCollectionStore.descriptionColor,
+            }"
+          >
             {{ widgetsNewCollectionStore.description }}
           </div>
         </div>
@@ -40,6 +59,8 @@
         <a
           :style="{
             backgroundColor: widgetsNewCollectionStore.buttonColor,
+            color: widgetsNewCollectionStore.buttonTextColor,
+            borderRadius: `${widgetsNewCollectionStore.buttonBorderRaius}px`,
           }"
           class="button-order"
           target="_blank"
@@ -54,6 +75,9 @@
             ? widgetsNewCollectionStore.img
             : 'sample.jpeg'
         "
+        :style="{
+          borderRadius: `${widgetsNewCollectionStore.imgBorderRaius}px`,
+        }"
       />
     </div>
   </q-page>
@@ -131,7 +155,6 @@ onMounted(() => {
 .widgets_description {
   font-size: 12px;
   font-weight: 400;
-  color: #727171;
 }
 
 .widgets_cansel {
@@ -179,7 +202,7 @@ onMounted(() => {
 @keyframes fadeTop {
   from {
     opacity: 0;
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, -80%);
   }
   to {
     opacity: 1;
@@ -190,7 +213,7 @@ onMounted(() => {
 @keyframes fadeDown {
   from {
     opacity: 0;
-    transform: translate(-50%, -80%);
+    transform: translate(-50%, -30%);
   }
   to {
     opacity: 1;
@@ -201,7 +224,7 @@ onMounted(() => {
 @keyframes fadeLeft {
   from {
     opacity: 0;
-    transform: translate(-30%, -50%);
+    transform: translate(-80%, -50%);
   }
   to {
     opacity: 1;
@@ -212,7 +235,7 @@ onMounted(() => {
 @keyframes fadeRight {
   from {
     opacity: 0;
-    transform: translate(-80%, -50%);
+    transform: translate(-30%, -50%);
   }
   to {
     opacity: 1;
