@@ -46,20 +46,24 @@
           </q-item-section>
         </q-item>
 
-        <component :is="mainStore.settingsMenu?.widgetSettings" />
+        <component
+          v-if="mainStore.settingsMode === 'default'"
+          :is="mainStore.settingsMenu?.widgetSettings"
+        />
+        <component v-else :is="mainStore.settingsComponent" />
 
         <q-item
           v-if="mainStore.panelMode !== 'default'"
           clickable
           v-ripple
           active-class="my-menu-link"
-          @click="mainStore.panelMode = 'default'"
+          @click="handlerBack"
         >
           <q-item-section avatar>
             <q-icon name="undo" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Назад к шаблонам</q-item-label>
+            <q-item-label>{{ backText }}</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
@@ -72,7 +76,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 import { uaeMainStore } from "@/store/mainStore";
 
@@ -95,9 +99,21 @@ const mainStore = uaeMainStore();
 
 const leftDrawerOpen = ref(false);
 
-// function handlerSelectModel(settingName) {
-//   mainStore.panelMode = settingName
-// }
+const backText = computed(() => {
+  if (mainStore.settingsMode !== "default") {
+    return "Назад к настройкам";
+  } else {
+    return "Назад к шаблонам";
+  }
+});
+
+function handlerBack() {
+  if (mainStore.settingsMode !== "default") {
+    mainStore.settingsMode = "default";
+  } else {
+    mainStore.panelMode = "default";
+  }
+}
 </script>
 
 <style>

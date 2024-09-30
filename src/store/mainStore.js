@@ -3,6 +3,12 @@ import WidgetsNewCollection from "@/components/widgetsNewCollection/WidgetsNewCo
 import WidgetsNewCollectionSelectSettings from "@/components/widgetsNewCollection/WidgetsNewCollectionSelectSettings.vue";
 
 import NewCollectionBackdropSettings from "@/components/widgetsNewCollection/settings/NewCollectionBackdropSettings.vue";
+import NewCollectionWidgetSettings from "@/components/widgetsNewCollection/settings/NewCollectionWidgetSettings.vue";
+import NewCollectionTitleSettings from "@/components/widgetsNewCollection/settings/NewCollectionTitleSettings.vue";
+import NewCollectionSubtitleSettings from "@/components/widgetsNewCollection/settings/NewCollectionSubtitleSettings.vue";
+import NewCollectionDescriptionSettings from "@/components/widgetsNewCollection/settings/NewCollectionDescriptionSettings.vue";
+import NewCollectionImgSettings from "@/components/widgetsNewCollection/settings/NewCollectionImgSettings.vue";
+import NewCollectionButtonSettings from "@/components/widgetsNewCollection/settings/NewCollectionButtonSettings.vue";
 
 import { defineStore } from "pinia";
 
@@ -26,20 +32,20 @@ export const uaeMainStore = defineStore("main", {
     },
 
     settingsComponent: (state) => {
-      if (state.panelMode === "newCollectionBackdropSettings") {
-        return NewCollectionBackdropSettings
-      } else if (state.panelMode === "newCollectionWidgetSettings") {
-        return NewCollectionBackdropSettings
-      } else if (state.panelMode === "newCollectionTitleSettings") {
-        return NewCollectionBackdropSettings
-      } else if (state.panelMode === "newCollectionSubtitleSettings") {
-        return NewCollectionBackdropSettings
-      } else if (state.panelMode === "newCollectionDescriptionSettings") {
-        return NewCollectionBackdropSettings
-      } else if (state.panelMode === "newCollectionImgSettings") {
-        return NewCollectionBackdropSettings
-      } else if (state.panelMode === "newCollectionButtonSettings") {
-        return NewCollectionBackdropSettings
+      if (state.settingsMode === "newCollectionBackdropSettings") {
+        return NewCollectionBackdropSettings;
+      } else if (state.settingsMode === "newCollectionWidgetSettings") {
+        return NewCollectionWidgetSettings;
+      } else if (state.settingsMode === "newCollectionTitleSettings") {
+        return NewCollectionTitleSettings;
+      } else if (state.settingsMode === "newCollectionSubtitleSettings") {
+        return NewCollectionSubtitleSettings;
+      } else if (state.settingsMode === "newCollectionDescriptionSettings") {
+        return NewCollectionDescriptionSettings;
+      } else if (state.settingsMode === "newCollectionImgSettings") {
+        return NewCollectionImgSettings;
+      } else if (state.settingsMode === "newCollectionButtonSettings") {
+        return NewCollectionButtonSettings;
       }
     },
   },
@@ -55,4 +61,3 @@ export const uaeMainStore = defineStore("main", {
 //   | "newCollectionDescriptionSettings",
 //   | "newCollectionImgSettings",
 //   | "newCollectionButtonSettings"
-
