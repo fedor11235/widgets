@@ -39,13 +39,7 @@
           @click="modelSelect = model"
         >
           <q-item-section avatar>
-            <q-icon
-              :name="
-                modelSelect.select === model.select
-                  ? 'check_box'
-                  : 'check_box_outline_blank'
-              "
-            />
+            <q-icon name="arrow_forward" />
           </q-item-section>
           <q-item-section>
             <q-item-label>{{ model.title }}</q-item-label>
@@ -81,8 +75,9 @@
 <script setup>
 import { ref } from "vue";
 
-import WidgetsNewCollection from "./components/WidgetsNewCollection.vue";
-import WidgetsNewCollectionSettings from "./components/WidgetsNewCollectionSettings.vue";
+import WidgetsNewCollection from "./components/widgetsNewCollection/WidgetsNewCollection.vue";
+// import WidgetsNewCollectionSettings from "./components/WidgetsNewCollectionSettings.vue";
+import WidgetsNewCollectionSelectSettings from "./components/widgetsNewCollection/WidgetsNewCollectionSelectSettings.vue";
 
 const models = [
   {
@@ -91,7 +86,7 @@ const models = [
     title: "Новая коллекция",
     caption: "шаблон",
     widgetView: WidgetsNewCollection,
-    widgetSettings: WidgetsNewCollectionSettings,
+    widgetSettings: WidgetsNewCollectionSelectSettings,
   },
 ];
 

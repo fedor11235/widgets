@@ -1,6 +1,5 @@
 <template>
   <q-item clickable>
-
     <q-item-section>
       <q-item-label>Найстройка цвета задника</q-item-label>
 
@@ -19,7 +18,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-item-label>Найстройка цвета кнопки</q-item-label>
 
@@ -38,7 +36,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-input
         outlined
@@ -49,7 +46,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-input
         outlined
@@ -60,7 +56,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-input
         outlined
@@ -71,7 +66,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-input
         outlined
@@ -83,7 +77,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-input
         outlined
@@ -94,7 +87,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-btn
         style="background: goldenrod; color: white"
@@ -105,7 +97,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-select
         outlined
@@ -117,7 +108,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-badge>
         Закругление виджета:
@@ -133,7 +123,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-item-label>Найстройка цвета текста кнопки</q-item-label>
 
@@ -152,7 +141,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-badge>
         Закругление кнопки: {{ widgetsNewCollectionStore.wiwgetBorderRadius }}px
@@ -167,7 +155,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-item-label>Найстройка цвета заголовка</q-item-label>
 
@@ -186,7 +173,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-item-label>Найстройка цвета подзаголовка</q-item-label>
 
@@ -205,7 +191,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-item-label>Найстройка цвета описания</q-item-label>
 
@@ -224,7 +209,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-badge>
         Настройка прозрачности фона:
@@ -259,7 +243,6 @@
   </q-item>
 
   <q-item clickable>
-
     <q-item-section>
       <q-badge>
         Закругление кнопки: {{ widgetsNewCollectionStore.imgBorderRaius }}px
